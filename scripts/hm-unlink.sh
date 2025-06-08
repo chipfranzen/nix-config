@@ -5,7 +5,7 @@ REPO="$HOME/projects/nix-config"
 DOTFILES="$REPO/dotfiles"
 
 declare -A FILES=(
-  [".zshrc"]="zsh/.zshrc"
+  [".zshrc"]="zsh/zshrc"
 )
 
 echo "🔓 Unlinking and copying dotfiles from $DOTFILES to $HOME"

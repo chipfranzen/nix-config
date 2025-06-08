@@ -1,7 +1,11 @@
-alias v = "nvim"
-alias vim = "nvim"
-alias ll = "ls -la"
-alias la = "ls -a"
+if [ -f "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh" ]; then
+  source "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
+fi
+
+alias v="nvim"
+alias vim="nvim"
+alias ll="ls -la"
+alias la="ls -a"
 
 export DOTSCRIPTS="$HOME/projects/nix-config/scripts"
 
