@@ -2,3 +2,8 @@ alias v = "nvim"
 alias vim = "nvim"
 alias ll = "ls -la"
 alias la = "ls -a"
+
+export DOTSCRIPTS="$HOME/projects/nix-config/scripts"
+
+alias hm-unlink="$DOTSCRIPTS/hm-unlink"
+alias hm-link="$DOTSCRIPTS/hm-link"

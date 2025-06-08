@@ -75,4 +75,12 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  # Make zsh primary shell
+  programs.zsh = {
+    enable = true;
+    loginShell = true;
+  };
+
+  home.shell = pkgs.zsh;
 }
