@@ -81,6 +81,4 @@
     enable = true;
     loginShell = true;
   };
-
-  home.shell = pkgs.zsh;
 }
