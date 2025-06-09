@@ -30,6 +30,8 @@
   cmd = nvim -d "$LOCAL" "$REMOTE" "$MERGED" -c "wincmd J"
   trustExitCode = true
 
+[push]
+  autoSetupRemote = true
 
 [alias]
   # Quick status and commit
