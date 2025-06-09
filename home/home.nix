@@ -15,14 +15,20 @@
   # release notes.
   home.stateVersion = "25.05"; # Please read the comment before changing.
 
+  home.sessionPath = [
+    "$HOME/.nix-profile/bin"
+    "$HOME/.local/bin"
+  ];
+
+
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
+    pkgs.git
     pkgs.zsh
-    pkgs.home-manager
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -45,6 +51,7 @@
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
     # # symlink to the Nix store copy.
     # ".screenrc".source = dotfiles/screenrc;
+    ".gitconfig".source = flakeRoot + "/dotfiles/git/gitconfig";
     ".zshrc".source = flakeRoot + /dotfiles/zsh/zshrc;
 
     # # You can also set the file content immediately.
@@ -72,8 +79,17 @@
   #
   home.sessionVariables = {
     # EDITOR = "emacs";
+    PATH = "${config.home.profileDirectory}/bin:$PATH";
   };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  programs.git = {
+    enable = true;
+  };
+
+  programs.zsh = {
+    enable = true;
+  };
 }

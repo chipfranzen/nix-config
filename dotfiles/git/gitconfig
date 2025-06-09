@@ -1,0 +1,74 @@
+[user]
+  name = Chip Franzén
+  email = chip.franzen@gmail.com
+
+[color]
+  ui = auto
+
+[core]
+  editor = nvim
+
+[merge]
+  tool = nvimdiff
+  conflictstyle = diff3
+
+[mergetool]
+  prompt = false
+  keepBackup = false
+
+[mergetool "nvimdiff"]
+  cmd = nvim -d "$LOCAL" "$REMOTE" "$MERGED" -c "wincmd J"
+  trustExitCode = true
+
+
+[alias]
+  # Quick status and commit
+  s = status -sb
+  a = add
+  aa = add --all
+  c = commit
+  ca = commit --amend
+  cm = commit -m
+  cam = commit -am
+
+  # Branching
+  b = branch
+  ba = branch -a
+  bd = branch -d
+  bD = branch -D
+
+  # Checkout
+  co = checkout
+  cob = checkout -b
+
+  # Logging
+  l = log --oneline --decorate --graph
+  lg = log --graph --abbrev-commit --decorate --date=relative --all \
+    --format=format:'%C(auto)%h %C(bold blue)%an%Creset -%C(auto)%d %s %C(dim white)(%cr)'
+
+  # Diff and blame
+  d = diff
+  dc = diff --cached
+  ds = diff --stat
+  bl = blame
+
+  # Stash
+  st = stash
+  sta = stash apply
+  stp = stash pop
+  stl = stash list
+  std = stash drop
+
+  # Remote and sync
+  r = remote -v
+  pf = push --force-with-lease
+  pl = pull --ff-only
+  up = pull --rebase --autostash
+  sync = !git pull --rebase --autostash && git push
+
+  # Misc
+  last = log -1 HEAD
+  who = shortlog -sn
+  rank = shortlog -sn --all --no-merges
+  clean-branches = !git branch --merged | grep -v '\\*\\|main\\|master' | xargs -n 1 git branch -d
+  mt = mergetool
