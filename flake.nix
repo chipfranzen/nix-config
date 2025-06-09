@@ -30,6 +30,5 @@
           flakeRoot = ./.;
         };
       };
-      packages.${system}.home-manager = home-manager.defaultPackage.${system};
     };
 }
