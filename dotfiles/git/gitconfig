@@ -5,8 +5,18 @@
 [color]
   ui = auto
 
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+
 [core]
-  editor = nvim
+	editor = nvim
+	viewer = less
+
+[man]
+	viewer = man
+
+[init]
+	defaultBranch = main
 
 [merge]
   tool = nvimdiff
@@ -23,10 +33,10 @@
 
 [alias]
   # Quick status and commit
-  s = status -sb
+  s = status -b
   a = add
   aa = add --all
-  c = commit
+  c = commit -v
   ca = commit --amend
   cm = commit -m
   cam = commit -am
@@ -51,13 +61,6 @@
   dc = diff --cached
   ds = diff --stat
   bl = blame
-
-  # Stash
-  st = stash
-  sta = stash apply
-  stp = stash pop
-  stl = stash list
-  std = stash drop
 
   # Remote and sync
   r = remote -v
