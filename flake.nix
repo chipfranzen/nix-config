@@ -17,6 +17,9 @@
       pkgs = nixpkgs.legacyPackages.${system};
     in
     {
+      packages.${system}.home-manager = home-manager.packages.${system}.home-manager;
+      defaultPackage.${system} = home-manager.packages.${system}.home-manager;
+
       homeConfigurations."chip" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 
