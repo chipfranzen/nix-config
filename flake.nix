@@ -11,7 +11,7 @@
   };
 
   outputs =
-    { self, nixpkgs, home-manager, flake-utils, ... }:
+    { self, nixpkgs, home-manager, ... }:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -30,5 +30,6 @@
           flakeRoot = ./.;
         };
       };
+      packages.${system}.home-manager = home-manager.defaultPackage.${system};
     };
 }

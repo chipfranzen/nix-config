@@ -9,5 +9,5 @@ alias la="ls -a"
 
 export DOTSCRIPTS="$HOME/projects/nix-config/scripts"
 
-alias hm-unlink="$DOTSCRIPTS/hm-unlink"
-alias hm-link="$DOTSCRIPTS/hm-link"
+alias hm-unlink="$DOTSCRIPTS/hm-unlink.sh"
+alias hm-link="$DOTSCRIPTS/hm-link.sh"
